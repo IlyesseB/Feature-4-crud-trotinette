@@ -18,7 +18,7 @@ require_once('close.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des trottinette électrique</title>
+    <title>Liste des trottinette</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -42,30 +42,29 @@ require_once('close.php');
                         $_SESSION['message'] = "";
                     }
                 ?>
-                <h1>Liste des trottinette électrique</h1>
+                <h1>Liste des trottinettes</h1>
                 <table class="table">
                     <thead>
-                        <th>id</th>
-                        <th>VitesseMax</th>
-                        <th>CapaciteEnergie</th>
+                        <th>Id trottinette</th>
+                        <th>Vitesse max</th>
+                        <th>Capacite energie</th>
                     </thead>
                     <tbody>
                         <?php
-                        // On boucle sur la variable result
                         foreach($result as $VitesseMax){
                         ?>
                             <tr>
                                 <td><?= $VitesseMax['idModeleTrott'] ?></td>
                                 <td><?= $VitesseMax['VitesseMax'] ?></td>
                                 <td><?= $VitesseMax['CapaciteEnergie'] ?></td>
-                                <td><a href="details.php?idModeleTrott=<?= $VitesseMax['idModeleTrott'] ?>">Voir</a> <a href="edit.php?idModeleTrott=<?= $VitesseMax['idModeleTrott'] ?>">Modifier</a> <a href="delete.php?idModeleTrott=<?= $VitesseMax['idModeleTrott'] ?>">Supprimer</a></td>
+                                <td><a href="details.php?id=<?= $VitesseMax['idModeleTrott'] ?>">Voir</a> <a href="edit.php?id=<?= $VitesseMax['idModeleTrott'] ?>">Modifier</a> <a href="delete.php?id=<?= $VitesseMax['idModeleTrott'] ?>">Supprimer</a></td>
                             </tr>
                         <?php
                         }
                         ?>
                     </tbody>
                 </table>
-                <a href="add.php" class="btn btn-primary">Ajouter un libelle</a>
+                <a href="add.php" class="btn btn-primary">Ajouter une trottinette</a>
             </section>
         </div>
     </main>
